@@ -350,23 +350,28 @@ public class MainActivity extends AppCompatActivity {
     public void testButtonClicked(View view){
 
         //SharedPreferences soundPreference = getSharedPreferences("Play_mode", MODE_PRIVATE);
-        Log.d("MainActivity", "test clicked");
-        Log.d("MainActivity", "Left Instrument:" + leftHand.getInstrument());
+        Log.d("MainActivity", "**************Begin test****************");
+        Log.d("MainActivity", "Left Instrument:     " + leftHand.getInstrument());
         for(int i = 1 ; i < leftHand.getEffectCount() + 1 ; i++){
             Log.d("MainActivity", "     Left Effect " + i + ": " + leftHand.getEffect(i));
         }
-        Log.d("MainActivity", "Right Instrument:" + rightHand.getInstrument());
+        Log.d("MainActivity", "Right Instrument:    " + rightHand.getInstrument());
         for(int i = 1 ; i < rightHand.getEffectCount() + 1 ; i++){
             Log.d("MainActivity", "     Right Effect " + i + ": " + rightHand.getEffect(i));
         }
-
+        //Pull data from shared reference
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        //displayGeneralPreference(sharedPreferences);
+        displayGeneralPreference(sharedPreferences);
         displaySoundPreference(sharedPreferences);
 
 
 
     }
+
+    /**
+     * Help function for printing sound preference
+     * @param sp - sharedPreference memory
+     */
     protected void displaySoundPreference(SharedPreferences sp){
         int Default = -99;
         int LeftInstrumentVol  = sp.getInt("leftInstrumentSeekVolume", Default);
@@ -392,23 +397,23 @@ public class MainActivity extends AppCompatActivity {
         int RightEffect3_volume = sp.getInt("rightEffect_3_volume", Default);
         int RightEffect3_level  = sp.getInt("rightEffect_3_level", Default);
 
+        boolean Left_enable     = sp.getBoolean("leftInstrumentSwitch", false);
+        boolean Right_enable     = sp.getBoolean("rightInstrumentSwitch", false);
+        Log.d("MainActivity", "Left Instrument Enabled:" + Left_enable +  "   Left Instrument volume:  " + LeftInstrumentVol + " %");
+        Log.d("MainActivity", "     Effect 1 volume:    " + LeftEffect1_volume + "/10     Effect 1 level:     "+ LeftEffect1_level);
+        Log.d("MainActivity", "     Effect 2 volume:    " + LeftEffect2_volume + "/10     Effect 2 level:     " + LeftEffect2_level);
+        Log.d("MainActivity", "     Effect 3 volume:    " + LeftEffect3_volume + "/10     Effect 3 level:     " + LeftEffect3_level);
 
-        Log.d("MainActivity", "Left Instrument volume:  " + LeftInstrumentVol + "%");
-        Log.d("MainActivity", "     Effect 1 volume:    " + LeftEffect1_volume);
-        Log.d("MainActivity", "     Effect 1 level:     " + LeftEffect1_level);
-        Log.d("MainActivity", "     Effect 2 volume:    " + LeftEffect2_volume);
-        Log.d("MainActivity", "     Effect 2 level:     " + LeftEffect2_level);
-        Log.d("MainActivity", "     Effect 3 volume:    " + LeftEffect3_volume);
-        Log.d("MainActivity", "     Effect 3 level:     " + LeftEffect3_level);
-
-        Log.d("MainActivity", "Right Instrument volume: " + RightInstrumentVol + "%");
-        Log.d("MainActivity", "     Effect 1 volume:    " + RightEffect1_volume);
-        Log.d("MainActivity", "     Effect 1 level:     "  + RightEffect1_level);
-        Log.d("MainActivity", "     Effect 2 volume:    " + RightEffect2_volume);
-        Log.d("MainActivity", "     Effect 2 level:     "  + RightEffect2_level);
-        Log.d("MainActivity", "     Effect 3 volume:    " + RightEffect3_volume);
-        Log.d("MainActivity", "     Effect 3 level:     "  + RightEffect3_level);
+        Log.d("MainActivity", "Right Instrument Enabled:" + Right_enable + "   Right Instrument volume: " + RightInstrumentVol + " %");
+        Log.d("MainActivity", "     Effect 1 volume:    " + RightEffect1_volume + "/10     Effect 1 level:     "  + RightEffect1_level + "/10");
+        Log.d("MainActivity", "     Effect 2 volume:    " + RightEffect2_volume + "/10     Effect 2 level:     "  + RightEffect2_level + "/10");
+        Log.d("MainActivity", "     Effect 3 volume:    " + RightEffect3_volume + "/10     Effect 3 level:     "  + RightEffect3_level + "/10");
     }
+
+    /**
+     * Help function for printing general reference
+     * @param sp
+     */
     protected void displayGeneralPreference(SharedPreferences sp){
         String Default = "N/A";
         String Play_mode = sp.getString("Play_mode", Default);
@@ -418,10 +423,10 @@ public class MainActivity extends AppCompatActivity {
 
         switch(Play_mode){
             case "0":
-                Log.d("MainActivity","Play mode: Hands Orientation Only");
+                Log.d("MainActivity","Play mode:    Hands Orientation Only");
                 break;
             case "1":
-                Log.d("MainActivity","Play mode: Hands Orientation and Sweeps");
+                Log.d("MainActivity","Play mode:    Hands Orientation and Sweeps");
                 break;
             default:
                 Log.d("MainActivity","It's broken");
@@ -430,16 +435,16 @@ public class MainActivity extends AppCompatActivity {
 
         switch(Sound_mode){
             case "0":
-                Log.d("MainActivity","Sound mode: Sound Effects");
+                Log.d("MainActivity","Sound mode:       Sound Effects");
                 break;
             case "1":
-                Log.d("MainActivity","Sound mode: Music");
+                Log.d("MainActivity","Sound mode:       Music");
                 break;
             default:
                 Log.d("MainActivity","It's broken");
                 break;
         }
-        Log.d("MainActivity","Enable Body Movement:" + bodyMovement);
+        Log.d("MainActivity","Enable Body Movement:     " + bodyMovement);
     }
     /*****************************************************
      * Save the instance of the data when changing orientation
@@ -455,7 +460,6 @@ public class MainActivity extends AppCompatActivity {
     /*****************************************************
      * Retrieve the saved state before recreating the activity
      ******************************************************/
-
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         Log.d("Restore","onRestoreInstanceState");
@@ -508,7 +512,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    /**
+     * Initializing top-right corner menu
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -516,6 +524,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Function for handling top-right corner option menu
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
