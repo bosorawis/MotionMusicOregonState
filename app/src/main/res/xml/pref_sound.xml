@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sample="http://schemas.android.com/apk/res-auto">
+<!-- A 'parent' preference, which enables/disables child preferences (below)
+         when checked/unchecked. -->
+
+    <!-- NOTE: This preference will be enabled only when the checkbox above is checked. -->
+    <!--****************Left Hand*****************************-->
+    <!-- Left Instrument control -->
+
+    <SwitchPreference
+            android:key="leftInstrumentSwitch"
+            android:title="@string/pref_volume_switch_left_instrument"
+            android:defaultValue="true" />
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            android:key="leftInstrumentSeekVolume"
+            android:title="@string/pref_volume_seek_left_instrument"
+            android:summary="@string/pref_volume_summary_left_instrument"
+            android:enabled="true"
+            android:defaultValue="50"
+            sample:msbp_minValue="0"
+            sample:msbp_maxValue="100"
+            sample:msbp_interval="1"
+            sample:msbp_measurementUnit="%"/>
+    <!--****************************************************-->
+    <!-- Left Effect 1 control -->
+    <PreferenceCategory
+            android:title="@string/pref_left_effect_1_title">
+
+            <com.pavelsikun.seekbarpreference.SeekBarPreference
+                android:key="leftEffect_1_volume"
+                android:title="@string/pref_left_effect_1_volume"
+                android:summary="@string/pref_effect_volume_summary"
+                android:enabled="true"
+                android:defaultValue="5"
+                sample:msbp_minValue="0"
+                sample:msbp_maxValue="10"
+                sample:msbp_interval="1"/>
+
+            <com.pavelsikun.seekbarpreference.SeekBarPreference
+                android:key="leftEffect_1_level"
+                android:title="@string/pref_left_effect_1_level"
+                android:summary="@string/pref_effect_level_summary"
+                android:enabled="true"
+                android:defaultValue="5"
+                sample:msbp_minValue="0"
+                sample:msbp_maxValue="10"
+                sample:msbp_interval="1"/>
+        </PreferenceCategory>
+    <!--**********************************************-->
+    <!-- Left Effect 2 control -->
+        <PreferenceCategory
+            android:title="@string/pref_left_effect_2_title">
+            <com.pavelsikun.seekbarpreference.SeekBarPreference
+                android:key="leftEffect_2_volume"
+                android:title="@string/pref_left_effect_2_volume"
+                android:summary="@string/pref_effect_volume_summary"
+                android:enabled="true"
+                android:defaultValue="5"
+                sample:msbp_minValue="0"
+                sample:msbp_maxValue="10"
+                sample:msbp_interval="1"/>
+
+            <com.pavelsikun.seekbarpreference.SeekBarPreference
+                android:key="leftEffect_2_level"
+                android:title="@string/pref_left_effect_2_level"
+                android:summary="@string/pref_effect_level_summary"
+                android:enabled="true"
+                android:defaultValue="5"
+                sample:msbp_minValue="0"
+                sample:msbp_maxValue="10"
+                sample:msbp_interval="1"/>
+        </PreferenceCategory>
+    <!--**********************************************-->
+    <!-- Left Effect 3 control -->
+    <PreferenceCategory
+            android:title="@string/pref_left_effect_3_title">
+            <com.pavelsikun.seekbarpreference.SeekBarPreference
+                android:key="leftEffect_3_volume"
+                android:title="@string/pref_left_effect_3_volume"
+                android:summary="@string/pref_effect_volume_summary"
+                android:enabled="true"
+                android:defaultValue="5"
+                sample:msbp_minValue="0"
+                sample:msbp_maxValue="10"
+                sample:msbp_interval="1"/>
+
+            <com.pavelsikun.seekbarpreference.SeekBarPreference
+                android:key="leftEffect_3_level"
+                android:title="@string/pref_left_effect_3_level"
+                android:summary="@string/pref_effect_level_summary"
+                android:enabled="true"
+                android:defaultValue="5"
+                sample:msbp_minValue="0"
+                sample:msbp_maxValue="10"
+                sample:msbp_interval="1"/>
+        </PreferenceCategory>
+    <!--******************************************************-->
+
+    <!--****************RIGHT Hand*****************************-->
+    <SwitchPreference
+        android:key="rightInstrumentSwitch"
+        android:title="@string/pref_volume_switch_right_instrument"
+        android:defaultValue="true" />
+    <!-- Right Instrument control -->
+    <com.pavelsikun.seekbarpreference.SeekBarPreference
+        android:key="rightInstrumentSeekVolume"
+        android:title="@string/pref_volume_seek_right_instrument"
+        android:summary="@string/pref_volume_summary_right_instrument"
+        android:enabled="true"
+        android:defaultValue="50"
+        sample:msbp_minValue="0"
+        sample:msbp_maxValue="100"
+        sample:msbp_interval="1"
+        sample:msbp_measurementUnit="%"/>
+    <PreferenceCategory
+        android:title="@string/pref_right_effect_1_title">
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            android:key="rightEffect_1_volume"
+            android:title="@string/pref_right_effect_1_volume"
+            android:summary="@string/pref_effect_volume_summary"
+            android:enabled="true"
+            android:defaultValue="5"
+            sample:msbp_minValue="0"
+            sample:msbp_maxValue="10"
+            sample:msbp_interval="1"/>
+
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            android:key="rightEffect_1_level"
+            android:title="@string/pref_right_effect_1_level"
+            android:summary="@string/pref_effect_level_summary"
+            android:enabled="true"
+            android:defaultValue="5"
+            sample:msbp_minValue="0"
+            sample:msbp_maxValue="10"
+            sample:msbp_interval="1"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_right_effect_2_title">
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            android:key="rightEffect_2_volume"
+            android:title="@string/pref_right_effect_2_volume"
+            android:summary="@string/pref_effect_volume_summary"
+            android:enabled="true"
+            android:defaultValue="5"
+            sample:msbp_minValue="0"
+            sample:msbp_maxValue="10"
+            sample:msbp_interval="1"/>
+
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            android:key="rightEffect_2_level"
+            android:title="@string/pref_right_effect_2_level"
+            android:summary="@string/pref_effect_level_summary"
+            android:enabled="true"
+            android:defaultValue="5"
+            sample:msbp_minValue="0"
+            sample:msbp_maxValue="10"
+            sample:msbp_interval="1"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_right_effect_3_title">
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            android:key="rightEffect_3_volume"
+            android:title="@string/pref_right_effect_3_volume"
+            android:summary="@string/pref_effect_volume_summary"
+            android:enabled="true"
+            android:defaultValue="5"
+            sample:msbp_minValue="0"
+            sample:msbp_maxValue="10"
+            sample:msbp_interval="1"/>
+
+        <com.pavelsikun.seekbarpreference.SeekBarPreference
+            android:key="rightEffect_3_level"
+            android:title="@string/pref_right_effect_3_level"
+            android:summary="@string/pref_effect_level_summary"
+            android:enabled="true"
+            android:defaultValue="5"
+            sample:msbp_minValue="0"
+            sample:msbp_maxValue="10"
+            sample:msbp_interval="1"/>
+    </PreferenceCategory>
+    <!--******************************************************-->
+
+</PreferenceScreen>

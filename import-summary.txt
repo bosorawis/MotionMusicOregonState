@@ -1,0 +1,113 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* LICENSE.txt
+* README.txt
+* RELEASE_NOTES.txt
+* doc\
+* doc\content.html
+* doc\examples.html
+* doc\fonts\
+* doc\fonts\Oswald-Bold.otf
+* doc\fonts\Oswald-Light.otf
+* doc\fonts\Oswald-Regular.otf
+* doc\fonts\Oswald-Stencil.otf
+* doc\fonts\PTC55F.ttf
+* doc\fonts\PTC75F.ttf
+* doc\fonts\PTN57F.ttf
+* doc\fonts\PTN77F.ttf
+* doc\fonts\PTS55F.ttf
+* doc\fonts\PTS56F.ttf
+* doc\fonts\PTS75F.ttf
+* doc\fonts\PTS76F.ttf
+* doc\images\
+* doc\images\add-dependency.png
+* doc\images\example.png
+* doc\images\favicon.png
+* doc\images\import-dialog.png
+* doc\images\logo.png
+* doc\index.html
+* doc\javadoc\
+* doc\javadoc\allclasses-frame.html
+* doc\javadoc\allclasses-noframe.html
+* doc\javadoc\constant-values.html
+* doc\javadoc\de\
+* doc\javadoc\de\mrapp\
+* doc\javadoc\de\mrapp\android\
+* doc\javadoc\de\mrapp\android\preference\
+* doc\javadoc\de\mrapp\android\preference\SeekBarPreference.html
+* doc\javadoc\de\mrapp\android\preference\class-use\
+* doc\javadoc\de\mrapp\android\preference\class-use\SeekBarPreference.html
+* doc\javadoc\de\mrapp\android\preference\package-frame.html
+* doc\javadoc\de\mrapp\android\preference\package-summary.html
+* doc\javadoc\de\mrapp\android\preference\package-tree.html
+* doc\javadoc\de\mrapp\android\preference\package-use.html
+* doc\javadoc\de\mrapp\android\preference\savedstate\
+* doc\javadoc\de\mrapp\android\preference\savedstate\SeekBarPreferenceSavedState.html
+* doc\javadoc\de\mrapp\android\preference\savedstate\class-use\
+* doc\javadoc\de\mrapp\android\preference\savedstate\class-use\SeekBarPreferenceSavedState.html
+* doc\javadoc\de\mrapp\android\preference\savedstate\package-frame.html
+* doc\javadoc\de\mrapp\android\preference\savedstate\package-summary.html
+* doc\javadoc\de\mrapp\android\preference\savedstate\package-tree.html
+* doc\javadoc\de\mrapp\android\preference\savedstate\package-use.html
+* doc\javadoc\de\mrapp\android\preference\util\
+* doc\javadoc\de\mrapp\android\preference\util\Condition.html
+* doc\javadoc\de\mrapp\android\preference\util\class-use\
+* doc\javadoc\de\mrapp\android\preference\util\class-use\Condition.html
+* doc\javadoc\de\mrapp\android\preference\util\package-frame.html
+* doc\javadoc\de\mrapp\android\preference\util\package-summary.html
+* doc\javadoc\de\mrapp\android\preference\util\package-tree.html
+* doc\javadoc\de\mrapp\android\preference\util\package-use.html
+* doc\javadoc\deprecated-list.html
+* doc\javadoc\help-doc.html
+* doc\javadoc\index-files\
+* doc\javadoc\index-files\index-1.html
+* doc\javadoc\index-files\index-2.html
+* doc\javadoc\index-files\index-3.html
+* doc\javadoc\index-files\index-4.html
+* doc\javadoc\index-files\index-5.html
+* doc\javadoc\index-files\index-6.html
+* doc\javadoc\index-files\index-7.html
+* doc\javadoc\index.html
+* doc\javadoc\overview-frame.html
+* doc\javadoc\overview-summary.html
+* doc\javadoc\overview-tree.html
+* doc\javadoc\package-list
+* doc\javadoc\resources\
+* doc\javadoc\resources\background.gif
+* doc\javadoc\resources\tab.gif
+* doc\javadoc\resources\titlebar.gif
+* doc\javadoc\resources\titlebar_end.gif
+* doc\javadoc\stylesheet.css
+* doc\style.css
+* proguard-project.txt
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => seekBarPreference\src\main\AndroidManifest.xml
+* res\ => seekBarPreference\src\main\res\
+* src\ => seekBarPreference\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SeekBarPreference"><attr name="android:max"/><attr name="android:summary"/><attr name="android:defaultValue"/><attr format="boolean" name="showValueAsSummary"/><attr format="boolean" name="showProgress"/><attr format="integer" name="min"/><attr format="integer" name="decimals"/><attr format="string" name="suffix"/><attr format="string" name="floatingPointSeparator"/><attr format="integer" name="stepSize"/></declare-styleable>
+    <!-- From: file:/D:/Users/Sorawis/AndroidStudioProjects/MotionMusicOSU/seekBarPreference/src/main/res/values/values.xml -->
+    <eat-comment/>
+    <dimen name="horizontal_padding">16dp</dimen>
+    <dimen name="vertical_padding">8dp</dimen>
+</resources>

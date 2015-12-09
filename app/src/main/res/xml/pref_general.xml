@@ -1,0 +1,44 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <!--
+    <EditTextPreference
+        android:key="example_text"
+        android:title="@string/pref_title_display_name"
+        android:defaultValue="@string/pref_default_display_name"
+        android:selectAllOnFocus="true"
+        android:inputType="textCapWords"
+        android:capitalize="words"
+        android:singleLine="true"
+        android:maxLines="1" />
+    -->
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+    <!--List for play mode -->
+    <ListPreference
+        android:key="Play_mode"
+        android:title="@string/pref_play_mode_selection"
+        android:entries="@array/pref_play_mode_available"
+        android:entryValues="@array/pref_play_mode_list_values"
+        android:defaultValue="1"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
+    <!--List for sound mode -->
+
+    <ListPreference
+        android:key="Sound_mode"
+        android:title="@string/pref_sound_mode_selection"
+        android:entries="@array/pref_sound_mode_available"
+        android:entryValues="@array/pref_sound_mode_list_values"
+        android:defaultValue="1"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
+
+    <SwitchPreference
+        android:key="Enable_body_movement"
+        android:title="@string/pref_enable_body_movement"
+        android:summary="@string/pref_description_enable_body_movement"
+        android:defaultValue="true" />
+</PreferenceScreen>

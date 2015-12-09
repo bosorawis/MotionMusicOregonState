@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\Users\Sorawis\AndroidStudioProjects\MotionMusicOSU\seekBarPreference\src\main\res"><file name="seek_bar_preference_dialog" path="D:\Users\Sorawis\AndroidStudioProjects\MotionMusicOSU\seekBarPreference\src\main\res\layout\seek_bar_preference_dialog.xml" qualifiers="" type="layout"/><file path="D:\Users\Sorawis\AndroidStudioProjects\MotionMusicOSU\seekBarPreference\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="SeekBarPreference">
+        <attr name="android:max"/>
+        <attr name="android:summary"/>
+        <attr name="android:defaultValue"/>
+        <attr format="boolean" name="showValueAsSummary"/>
+        <attr format="boolean" name="showProgress"/>
+        <attr format="integer" name="min"/>
+        <attr format="integer" name="decimals"/>
+        <attr format="string" name="suffix"/>
+        <attr format="string" name="floatingPointSeparator"/>
+        <attr format="integer" name="stepSize"/>
+    </declare-styleable></file><file path="D:\Users\Sorawis\AndroidStudioProjects\MotionMusicOSU\seekBarPreference\src\main\res\values\values.xml" qualifiers=""><dimen name="horizontal_padding">16dp</dimen><dimen name="vertical_padding">8dp</dimen></file></source><source path="D:\Users\Sorawis\AndroidStudioProjects\MotionMusicOSU\seekBarPreference\build\generated\res\rs\debug"/><source path="D:\Users\Sorawis\AndroidStudioProjects\MotionMusicOSU\seekBarPreference\build\generated\res\resValues\debug"/></dataSet><dataSet config="debug"><source path="D:\Users\Sorawis\AndroidStudioProjects\MotionMusicOSU\seekBarPreference\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="SeekBarPreference"><attr name="android:max"/><attr name="android:summary"/><attr name="android:defaultValue"/><attr format="boolean" name="showValueAsSummary"/><attr format="boolean" name="showProgress"/><attr format="integer" name="min"/><attr format="integer" name="decimals"/><attr format="string" name="suffix"/><attr format="string" name="floatingPointSeparator"/><attr format="integer" name="stepSize"/></declare-styleable></configuration></mergedItems></merger>
