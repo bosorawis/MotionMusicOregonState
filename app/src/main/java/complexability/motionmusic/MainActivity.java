@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
+
         /**********************************************************************************************
          *Create Right Instrument spinner
          ***********************************************************************************************/
@@ -365,7 +367,8 @@ public class MainActivity extends AppCompatActivity {
         displaySoundPreference(sharedPreferences);
 
         Log.d("MainActivity", "**************End test****************");
-
+        Intent intent = new Intent(getApplicationContext(), CSoundTest.class);
+        startActivity(intent);
     }
 
     /**
@@ -553,6 +556,23 @@ public class MainActivity extends AppCompatActivity {
         return preferences.getString(key, null);
     }
     */
+    /**********************************************************************************************
+     * Attempt to migrate all the dropboxes into a nice popup from a button
+     * by calling preference fragments from the main page
+     **********************************************************************************************/
+    /**
+     * Routine for leftbuttonclick
+     * spawn lefthand preference fragment
+     */
+    public void leftHandButtonClick(View view){
+        Log.d("MainActivity", "leftHandButtonClick");
+    }
+    public void rightHandButtonClick(View view){
+        Log.d("MainActivity", "rightHandButtonClick");
+    }
+    /**********************************************************************************************
+     * Preference fragment attempt End here
+     *********************************************************************************************/
 
 }
 
