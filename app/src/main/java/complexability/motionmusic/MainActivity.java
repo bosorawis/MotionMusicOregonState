@@ -364,7 +364,7 @@ public class MainActivity extends AppCompatActivity {
         displayGeneralPreference(sharedPreferences);
         displaySoundPreference(sharedPreferences);
 
-
+        Log.d("MainActivity", "**************End test****************");
 
     }
 
@@ -423,10 +423,10 @@ public class MainActivity extends AppCompatActivity {
 
         switch(Play_mode){
             case "0":
-                Log.d("MainActivity","Play mode:    Hands Orientation Only");
+                Log.d("MainActivity","Play mode:        Hands Orientation Only");
                 break;
             case "1":
-                Log.d("MainActivity","Play mode:    Hands Orientation and Sweeps");
+                Log.d("MainActivity","Play mode:        Hands Orientation and Sweeps");
                 break;
             default:
                 Log.d("MainActivity","It's broken");
