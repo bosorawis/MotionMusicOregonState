@@ -10,20 +10,16 @@ import com.csounds.CsoundObj;
 import com.csounds.CsoundObjListener;
 import com.csounds.bindings.CsoundBinding;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+
 
 import csnd6.CsoundMYFLTArray;
 import csnd6.controlChannelType;
 
-public class CSoundTest extends AppCompatActivity implements CsoundObjListener, CsoundBinding {
+public class CSoundTest extends BaseCsoundActivity implements CsoundObjListener, CsoundBinding {
     public View multiTouchView;
 
-    protected CsoundObj csoundObj = new CsoundObj(false,true);
+    //protected CsoundObj csoundObj = new CsoundObj(false,true);
 
     /**
      * Variables
@@ -37,6 +33,7 @@ public class CSoundTest extends AppCompatActivity implements CsoundObjListener, 
 
 
     protected int getTouchIdAssignment(){
+        Log.d("testCsound", "getTouchIdAssignment()");
         int i;
         for (i = 0 ; i < touchIds.length ; i++);{
             if (touchIds[i] == -1) {
@@ -47,6 +44,7 @@ public class CSoundTest extends AppCompatActivity implements CsoundObjListener, 
     }
 
     protected int getTouchId(int touchId) {
+        Log.d("testCsound", "getTouchId()");
         for (int i = 0; i < touchIds.length; i++) {
             if (touchIds[i] == touchId) {
                 return i;
@@ -56,7 +54,7 @@ public class CSoundTest extends AppCompatActivity implements CsoundObjListener, 
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("testCsound", "onCreate()");
         for (int i = 0 ; i < touchIds.length ; i++){
@@ -105,7 +103,6 @@ public class CSoundTest extends AppCompatActivity implements CsoundObjListener, 
 
                         break;
                     case MotionEvent.ACTION_MOVE:
-
                         for (int i = 0; i < event.getPointerCount(); i++) {
                             int pointerId = event.getPointerId(i);
                             int id = getTouchId(pointerId);
@@ -149,6 +146,7 @@ public class CSoundTest extends AppCompatActivity implements CsoundObjListener, 
     @Override
     public void setup(CsoundObj csoundObj) {
         for (int i = 0; i < touchIds.length; i++) {
+            Log.d("testCsound", "setup()");
             touchXPtr[i] = csoundObj.getInputChannelPtr(
                     String.format("touch.%d.x", i),
                     controlChannelType.CSOUND_CONTROL_CHANNEL);
@@ -167,9 +165,7 @@ public class CSoundTest extends AppCompatActivity implements CsoundObjListener, 
     }
 
     @Override
-    public void updateValuesFromCsound() {
-
-    }
+    public void updateValuesFromCsound() {}
 
 
     @Override
@@ -183,51 +179,9 @@ public class CSoundTest extends AppCompatActivity implements CsoundObjListener, 
     }
 
     @Override
-    public void csoundObjStarted(CsoundObj csoundObj) {
-
-    }
+    public void csoundObjStarted(CsoundObj csoundObj) {}
 
     @Override
-    public void csoundObjCompleted(CsoundObj csoundObj) {
+    public void csoundObjCompleted(CsoundObj csoundObj) {}
 
-    }
-
-    /**
-     * Helper functions for handling resources file
-     * @param resId
-     * @return
-     */
-    protected String getResourceFileAsString(int resId) {
-        StringBuilder str = new StringBuilder();
-
-        InputStream is = getResources().openRawResource(resId);
-        BufferedReader r = new BufferedReader(new InputStreamReader(is));
-        String line;
-
-        try {
-            while ((line = r.readLine()) != null) {
-                str.append(line).append("\n");
-            }
-        } catch (IOException ios) {
-
-        }
-
-        return str.toString();
-    }
-
-    protected File createTempFile(String csd) {
-        File f = null;
-
-        try {
-            f = File.createTempFile("temp", ".csd", this.getCacheDir());
-            FileOutputStream fos = new FileOutputStream(f);
-            fos.write(csd.getBytes());
-            fos.close();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        return f;
-    }
 }

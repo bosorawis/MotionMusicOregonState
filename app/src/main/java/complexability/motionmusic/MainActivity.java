@@ -455,7 +455,7 @@ public class MainActivity extends AppCompatActivity {
      ******************************************************/
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        Log.d("save state", "onSaveInstanceState");
+        Log.d("MainActivity", "onSaveInstanceState");
         super.onSaveInstanceState(outState);
         outState.putInt("LEFT_EFFECT_COUNT", leftHand.getEffectCount());
         outState.putInt("RIGHT_EFFECT_COUNT", rightHand.getEffectCount());
