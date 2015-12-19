@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="complexability.motionmusic">
 
-    <uses-feature android:name="android.hardware.audio.low_latency" android:required="true"/>
+    <uses-feature
+        android:name="android.hardware.audio.low_latency"
+        android:required="true" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -30,8 +32,9 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".CSoundTest"></activity>
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".CSoundTest" />
+        <activity android:name=".XY_touch_CSound"></activity>
     </application>
 
 </manifest>

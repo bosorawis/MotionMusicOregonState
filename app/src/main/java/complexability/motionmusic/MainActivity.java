@@ -367,7 +367,7 @@ public class MainActivity extends AppCompatActivity {
         displaySoundPreference(sharedPreferences);
 
         Log.d("MainActivity", "**************End test****************");
-        Intent intent = new Intent(getApplicationContext(), CSoundTest.class);
+        Intent intent = new Intent(getApplicationContext(), XY_touch_CSound.class);
         startActivity(intent);
     }
 
