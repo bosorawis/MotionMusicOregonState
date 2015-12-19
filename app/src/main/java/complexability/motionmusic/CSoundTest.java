@@ -133,8 +133,8 @@ public class CSoundTest extends BaseCsoundActivity implements CsoundObjListener,
                 }
                 return true;            }
         });
-        setContentView(R.layout.activity_csound_test);
         String csd = getResourceFileAsString(R.raw.multitouch_xy);
+        setContentView(R.layout.activity_csound_test);
         File f = createTempFile(csd);
 
         csoundObj.addBinding(this);
