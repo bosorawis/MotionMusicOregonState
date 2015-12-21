@@ -370,9 +370,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), CSoundTest.class);
         startActivity(intent);
     }
-    public void XYtestClicked(View view){
+    public void XYtestClicked(View view) {
         Log.d("MainActivity","XYtestClicked()");
         Intent intent = new Intent(getApplicationContext(), XY_touch_CSound.class);
+        startActivity(intent);
+    }
+    public void accelerometerTestClicked(View view){
+        Log.d("MainActivity","XYtestClicked()");
+        Intent intent = new Intent(getApplicationContext(), AccelerometerActivity.class);
         startActivity(intent);
     }
     /**

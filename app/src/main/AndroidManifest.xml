@@ -34,7 +34,8 @@
             android:label="@string/title_activity_settings"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".CSoundTest" />
-        <activity android:name=".XY_touch_CSound"></activity>
+        <activity android:name=".XY_touch_CSound" />
+        <activity android:name=".AccelerometerActivity"></activity>
     </application>
 
 </manifest>

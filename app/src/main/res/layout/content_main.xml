@@ -198,27 +198,35 @@
         android:layout_height="wrap_content"
         android:text="Left Hand"
         android:id="@+id/leftHandbutton"
+        android:onClick="leftHandButtonClick"
         android:layout_below="@+id/linearLayout"
-        android:layout_alignParentStart="true"
-        android:onClick="leftHandButtonClick"/>
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Right Hand"
         android:id="@+id/rightHandButton"
-        android:layout_alignTop="@+id/leftHandbutton"
-        android:layout_toEndOf="@+id/leftHandbutton"
-        android:layout_marginStart="133dp"
-        android:onClick="rightHandButtonClick"/>
+        android:onClick="rightHandButtonClick"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="XYTest"
         android:id="@+id/XYTest"
+        android:onClick="XYtestClicked"
         android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accelerometer"
+        android:id="@+id/accelerometerTest"
+        android:layout_below="@+id/leftHandbutton"
         android:layout_centerHorizontal="true"
-        android:onClick="XYtestClicked"/>
+        android:onClick="accelerometerTestClicked"/>
 
 </RelativeLayout>

@@ -123,6 +123,7 @@
     <string name="pref_right_effect_3_title">Right Effect 3</string>
     <string name="pref_right_effect_3_volume">Right Effect 3 Volume</string>
     <string name="pref_right_effect_3_level">Right Effect 3 Level</string>
+    <string name="title_activity_accelerometer">accelerometerActivity</string>
     <!--***************************************************************************-->
 
 </resources>

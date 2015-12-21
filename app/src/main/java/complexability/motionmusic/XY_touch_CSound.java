@@ -11,6 +11,7 @@ import android.widget.SeekBar;
 import com.csounds.CsoundObj;
 import com.csounds.CsoundObjListener;
 import com.csounds.bindings.CsoundBinding;
+import com.csounds.bindings.motion.CsoundMotion;
 import com.csounds.bindings.ui.CsoundUI;
 
 
@@ -128,6 +129,10 @@ public class XY_touch_CSound extends BaseCsoundActivity implements CsoundObjList
 
         String csd = getResourceFileAsString(R.raw.multitouch_xy);
         File f = createTempFile(csd);
+
+        //CsoundMotion csoundMotion = new CsoundMotion(csoundObj);
+        //csoundMotion.enableAccelerometer(XY_touch_CSound.this);
+
 
         csoundObj.addBinding(this);
 
