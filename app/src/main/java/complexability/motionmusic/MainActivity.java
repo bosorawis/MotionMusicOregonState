@@ -367,10 +367,14 @@ public class MainActivity extends AppCompatActivity {
         displaySoundPreference(sharedPreferences);
 
         Log.d("MainActivity", "**************End test****************");
+        Intent intent = new Intent(getApplicationContext(), CSoundTest.class);
+        startActivity(intent);
+    }
+    public void XYtestClicked(View view){
+        Log.d("MainActivity","XYtestClicked()");
         Intent intent = new Intent(getApplicationContext(), XY_touch_CSound.class);
         startActivity(intent);
     }
-
     /**
      * Help function for printing sound preference
      * @param sp - sharedPreference memory
@@ -513,8 +517,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-
     /**
      * Initializing top-right corner menu
      * @param menu
@@ -526,7 +528,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
     /**
      * Function for handling top-right corner option menu
      * @param item
@@ -549,7 +550,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
     /**
     public static String getPref(String key, Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);

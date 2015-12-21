@@ -9,4 +9,28 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="complexability.motionmusic.CSoundTest">
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ButtonList"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <Button android:id="@+id/StartCsound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="StartCsound" />
+        <Button android:id="@+id/StopCsound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="StopCsound" />
+        <Button android:id="@+id/Button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="B1" />
+    </LinearLayout>
+    <SeekBar android:id="@+id/SeekBar1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ButtonList" />
+
 </RelativeLayout>
