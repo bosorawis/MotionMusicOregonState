@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="instrument_type_select">Select Instrument</string>
+    <string-array name="instrument_available">
+        <item>Instrument 1</item>
+        <item>Instrument 2</item>
+        <item>Instrument 3</item>
+        <item>Instrument 4</item>
+    </string-array>
+    <string-array name="instrument_value_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+</resources>

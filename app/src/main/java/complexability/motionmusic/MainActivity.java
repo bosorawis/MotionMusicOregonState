@@ -1,30 +1,41 @@
 package complexability.motionmusic;
 
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.provider.Settings;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.preference.RingtonePreference;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
-
-import complexability.motionmusic.R;
 
 public class MainActivity extends AppCompatActivity {
     public SharedPreferences prefs;
+    final Context context = this;
     private Hands rightHand = new Hands();
     private Hands leftHand  = new Hands();
+    private Button leftHandButton;
     /*
     private int leftEffectCount;
     private int rightEffectCount;
@@ -571,6 +582,30 @@ public class MainActivity extends AppCompatActivity {
      */
     public void leftHandButtonClick(View view){
         Log.d("MainActivity", "leftHandButtonClick");
+
+
+        final Dialog dialog = new Dialog(context);
+
+        dialog.setContentView(R.layout.dialog_left_hand);
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                Log.d("Dialog", "onDismiss");
+
+            }
+        });
+        dialog.setTitle("Left-Hand Preference");
+        dialog.show();
+        //Spawn new fragment
+        //Fragment newFragment = new leftHandPreferenceFragment();
+        /*
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        PreferenceFragment mPrefsFragment = new leftHandPreference();
+
+        transaction.replace(android.R.id.content, mPrefsFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+        */
     }
     public void rightHandButtonClick(View view){
         Log.d("MainActivity", "rightHandButtonClick");
@@ -579,6 +614,127 @@ public class MainActivity extends AppCompatActivity {
      * Preference fragment attempt End here
      *********************************************************************************************/
 
+    /**
+     * Created by Sorawis on 12/25/2015.
+     * Fragment for handling lefthand preferences
+     */
+    public static class leftHandPreference extends PreferenceFragment {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            Log.d("leftHandPreference", "onCreate");
+            super.onCreate(savedInstanceState);
+            setHasOptionsMenu(true);
+            addPreferencesFromResource(R.xml.pref_left_hand);
+            bindPreferenceSummaryToValue(findPreference("Instrument"));
+        }
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            Log.d("leftHandPreference", "onCreateView");
+            View view = super.onCreateView(inflater, container, savedInstanceState);
+            view.setBackgroundColor(getResources().getColor(android.R.color.white));
+            return view;
+        }
+
+        @Override
+        public void onStart() {
+            Log.d("leftHandPreference", "onStart");
+            super.onStart();
+        }
+
+        @Override
+        public void onStop() {
+            Log.d("leftHandPreference", "onStop");
+            super.onStop();
+        }
+
+        @Override
+        public void onDestroyView() {
+            Log.d("leftHandPreference", "onDestroyView");
+            super.onDestroyView();
+        }
+
+        @Override
+        public void onDetach() {
+            Log.d("leftHandPreference", "onDetach");
+            super.onDetach();
+        }
+
+        @Override
+        public void onAttach(Context context) {
+            Log.d("leftHandPreference", "onAttach");
+            super.onAttach(context);
+        }
+
+        private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object value) {
+                String stringValue = value.toString();
+
+                if (preference instanceof ListPreference) {
+                    // For list preferences, look up the correct display value in
+                    // the preference's 'entries' list.
+                    ListPreference listPreference = (ListPreference) preference;
+                    int index = listPreference.findIndexOfValue(stringValue);
+
+                    // Set the summary to reflect the new value.
+                    preference.setSummary(
+                            index >= 0
+                                    ? listPreference.getEntries()[index]
+                                    : null);
+
+                } else if (preference instanceof RingtonePreference) {
+                    // For ringtone preferences, look up the correct display value
+                    // using RingtoneManager.
+                    if (TextUtils.isEmpty(stringValue)) {
+                        // Empty values correspond to 'silent' (no ringtone).
+                        preference.setSummary(R.string.pref_ringtone_silent);
+
+                    } else {
+                        Ringtone ringtone = RingtoneManager.getRingtone(
+                                preference.getContext(), Uri.parse(stringValue));
+
+                        if (ringtone == null) {
+                            // Clear the summary if there was a lookup error.
+                            preference.setSummary(null);
+                        } else {
+                            // Set the summary to reflect the new ringtone display
+                            // name.
+                            String name = ringtone.getTitle(preference.getContext());
+                            preference.setSummary(name);
+                        }
+                    }
+
+                } else {
+                    // For all other preferences, set the summary to the value's
+                    // simple string representation.
+                    preference.setSummary(stringValue);
+                }
+                return true;
+            }
+        };
+
+        /**
+         * Binds a preference's summary to its value. More specifically, when the
+         * preference's value is changed, its summary (line of text below the
+         * preference title) is updated to reflect the value. The summary is also
+         * immediately updated upon calling this method. The exact display format is
+         * dependent on the type of preference.
+         *
+         * @see #sBindPreferenceSummaryToValueListener
+         */
+        private static void bindPreferenceSummaryToValue(Preference preference) {
+            // Set the listener to watch for value changes.
+            preference.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
+
+            // Trigger the listener immediately with the preference's
+            // current value.
+            sBindPreferenceSummaryToValueListener.onPreferenceChange(preference,
+                    PreferenceManager
+                            .getDefaultSharedPreferences(preference.getContext())
+                            .getString(preference.getKey(), ""));
+        }
+
+    }
 }
 
 
