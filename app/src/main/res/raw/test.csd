@@ -8,6 +8,7 @@ nchnls=1
 ksmps=64
 sr = 44100
 
+
 instr 1
 
 isl chnget "SeekBar1"
@@ -15,9 +16,13 @@ ksl chnget "SeekBar1"
 ksl port ksl, 0.01, isl
 a2 expsegr 0.001,0.01,p4,p3-0.01, 0.001, 0.1, 0.001
 a1 oscili a2, p5*(1+ksl), 1
-out a1
 
+
+out a1
 endin
+
+
+
 
 </CsInstruments>
 <CsScore>

@@ -11,6 +11,7 @@
     <!-- MODIFY_AUDIO_SETTINGS is needed to use audio effects such as environmental reverb -->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
         android:allowBackup="true"
@@ -35,7 +36,7 @@
             android:parentActivityName=".MainActivity" />
         <activity android:name=".CSoundTest" />
         <activity android:name=".XY_touch_CSound" />
-        <activity android:name=".AccelerometerActivity"></activity>
+        <activity android:name=".AccelerometerActivity" />
     </application>
 
 </manifest>

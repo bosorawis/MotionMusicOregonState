@@ -591,29 +591,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDismiss(DialogInterface dialog) {
                 Log.d("Dialog", "onDismiss");
-
+                dialog.dismiss();
             }
         });
+
         dialog.setTitle("Left-Hand Preference");
         dialog.show();
-        //Spawn new fragment
-        //Fragment newFragment = new leftHandPreferenceFragment();
-        /*
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        PreferenceFragment mPrefsFragment = new leftHandPreference();
-
-        transaction.replace(android.R.id.content, mPrefsFragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
-        */
     }
+
     public void rightHandButtonClick(View view){
         Log.d("MainActivity", "rightHandButtonClick");
     }
-    /**********************************************************************************************
-     * Preference fragment attempt End here
-     *********************************************************************************************/
-
     /**
      * Created by Sorawis on 12/25/2015.
      * Fragment for handling lefthand preferences
@@ -663,6 +651,12 @@ public class MainActivity extends AppCompatActivity {
         public void onAttach(Context context) {
             Log.d("leftHandPreference", "onAttach");
             super.onAttach(context);
+        }
+
+        @Override
+        public void onPause() {
+            Log.d("leftHandPreference", "onPause");
+            super.onPause();
         }
 
         private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
@@ -735,6 +729,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
 }
 
 

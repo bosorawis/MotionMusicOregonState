@@ -21,24 +21,37 @@ kx chnget S_xName
 ky chnget S_yName
 
 kenv linsegr 0, .001, 1, .1, 1, .25, 0
-a1 vco2 ky * .5 * kenv, 60 + (log(1 - kx) * 3000), 0
+;a1 vco2 ky * 0.5 * kenv, 80 + (log(1 - kx) * 3000), 0
+a1 oscil3 .8, 440*(kx+ky) , 1
 
 ga1 = ga1 + a1
 
 endin
 
 instr 2
-
+;---------------Added later
+;itie tival
+;i_instanceNum = p4
+;
+;S_xName sprintf "touch.%d.x", i_instanceNum
+;kx chnget S_xName
+;;-----------------------------
 ;kcutoff chnget "cutoff"
 ;kresonance chnget "resonance"
 
 kcutoff = 6000
-kresonance = .2
+kresonance = .1
 
 
 a1 moogladder ga1, kcutoff, kresonance
 
-aL, aR reverbsc a1, a1, .72, 5000
+
+;a1 delay ga1 .25
+aL, aR reverbsc a1, a1, .6, 5000
+
+aL vdelay3 a1+aR*10 ,20, 100
+aR vdelay3 a1+aL*10, 20, 100s
+
 
 outs aL, aR
 
@@ -49,9 +62,9 @@ endin
 
 </CsInstruments>
 <CsScore>
-f1 0 16384 10 1
+f 1 0 16384 10 1
 
-i2 0 360000
+i 2 0 360000
 
 </CsScore>
 </CsoundSynthesizer>
