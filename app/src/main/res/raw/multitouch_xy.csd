@@ -50,7 +50,7 @@ a1 moogladder ga1, kcutoff, kresonance
 aL, aR reverbsc a1, a1, .6, 5000
 
 aL vdelay3 a1+aR*10 ,20, 100
-aR vdelay3 a1+aL*10, 20, 100s
+aR vdelay3 a1+aL*10, 20, 100
 
 
 outs aL, aR

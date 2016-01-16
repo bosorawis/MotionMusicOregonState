@@ -205,9 +205,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Right Hand"
-        android:id="@+id/rightHandButton"
-        android:onClick="rightHandButtonClick"
+        android:text="Bluetooth"
+        android:id="@+id/BluetoothTest"
+        android:onClick="BluetoothTestButtonClick"
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentEnd="true" />
 

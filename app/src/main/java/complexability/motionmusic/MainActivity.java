@@ -30,6 +30,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+
+import app.akexorcist.bluetotohspp.library.BluetoothSPP;
+import app.akexorcist.bluetotohspp.library.BluetoothState;
+
 public class MainActivity extends AppCompatActivity {
     public SharedPreferences prefs;
     final Context context = this;
@@ -599,8 +603,11 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void rightHandButtonClick(View view){
-        Log.d("MainActivity", "rightHandButtonClick");
+    public void BluetoothTestButtonClick(View view){
+        Log.d("MainActivity", "BluetoothTestButtonClick");
+        Intent intent = new Intent(getApplicationContext(), BluetoothTest.class);
+        startActivity(intent);
+
     }
     /**
      * Created by Sorawis on 12/25/2015.
