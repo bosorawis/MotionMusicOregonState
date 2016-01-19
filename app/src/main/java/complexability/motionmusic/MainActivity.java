@@ -36,14 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private Hands rightHand = new Hands();
     private Hands leftHand  = new Hands();
     private Button leftHandButton;
-    /*
-    private int leftEffectCount;
-    private int rightEffectCount;
-    private String LeftInstrument;
-    private String RightInstrument;
-    private String LeftEffect_1, LeftEffect_2, LeftEffect_3;
-    private String RightEffect_1, RightEffect_2, RightEffect_3;
-    */
+
     Spinner leftInstrumentSpinner;
     Spinner rightInstrumentSpinner;
     Spinner leftEffectSpinner_1;
