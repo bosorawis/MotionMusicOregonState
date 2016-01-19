@@ -40,17 +40,17 @@ instr 2
 ;kresonance chnget "resonance"
 
 kcutoff = 6000
-kresonance = .1
+kresonance = .2
 
 
 a1 moogladder ga1, kcutoff, kresonance
 
 
 ;a1 delay ga1 .25
-aL, aR reverbsc a1, a1, .6, 5000
+aL, aR reverbsc a1, a1, .1, 4000
 
-aL vdelay3 a1+aR*10 ,20, 100
-aR vdelay3 a1+aL*10, 20, 100s
+;aL vdelay3 a1+aR*10 ,20, 100
+;aR vdelay3 a1+aL*10, 20, 100s
 
 
 outs aL, aR
@@ -62,7 +62,7 @@ endin
 
 </CsInstruments>
 <CsScore>
-f 1 0 16384 10 1
+f 1 0 32768 10 1
 
 i 2 0 360000
 
