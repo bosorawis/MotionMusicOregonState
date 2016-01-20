@@ -22,7 +22,7 @@ ky chnget S_yName
 
 kenv linsegr 0, .001, 1, .1, 1, .25, 0
 ;a1 vco2 ky * 0.5 * kenv, 80 + (log(1 - kx) * 3000), 0
-a1 oscil3 .8, 440*(kx+ky) , 1
+a1 oscil3 4*ky, 440*(kx)+440, 1
 
 ga1 = ga1 + a1
 

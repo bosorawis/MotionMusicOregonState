@@ -426,6 +426,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MainActivity", "     Effect 3 volume:    " + RightEffect3_volume + "/10     Effect 3 level:     "  + RightEffect3_level + "/10");
     }
 
+
     /**
      * Help function for printing general reference
      * @param sp
