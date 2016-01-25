@@ -1,2 +1,2 @@
-include ':app', 'MaterialSeekBarPreference', ':CsoundAndroid'
+include ':app', 'MaterialSeekBarPreference', ':CsoundAndroid', 'BluetoothSPP'
 

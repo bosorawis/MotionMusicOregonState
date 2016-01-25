@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BluetoothSPP/BluetoothSPP.iml" filepath="$PROJECT_DIR$/BluetoothSPP/BluetoothSPP.iml" />
       <module fileurl="file://$PROJECT_DIR$/CsoundAndroid/CsoundAndroid.iml" filepath="$PROJECT_DIR$/CsoundAndroid/CsoundAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/MaterialSeekBarPreference/MaterialSeekBarPreference.iml" filepath="$PROJECT_DIR$/MaterialSeekBarPreference/MaterialSeekBarPreference.iml" />
       <module fileurl="file://$PROJECT_DIR$/MotionMusicOSU.iml" filepath="$PROJECT_DIR$/MotionMusicOSU.iml" />

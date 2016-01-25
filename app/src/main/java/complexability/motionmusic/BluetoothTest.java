@@ -66,7 +66,7 @@ public class BluetoothTest extends AppCompatActivity {
         });
         bt.setOnDataReceivedListener(new BluetoothSPP.OnDataReceivedListener() {
             public void onDataReceived(byte[] data, String message) {
-                Log.d("Hello","gi");
+                Log.d("Receive", message);
                 //Toast.makeText(BluetoothTest.this, message, Toast.LENGTH_SHORT).show();
             }
         });
