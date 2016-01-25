@@ -22,7 +22,7 @@ ky chnget S_yName
 
 kenv linsegr 0, .001, 1, .1, 1, .25, 0
 ;a1 vco2 ky * 0.5 * kenv, 80 + (log(1 - kx) * 3000), 0
-a1 oscil3 .8, 440*(kx+ky) , 1
+a1 oscil3 1.2, 110*(2+kx+ky) , 1
 
 ga1 = ga1 + a1
 
@@ -47,10 +47,11 @@ a1 moogladder ga1, kcutoff, kresonance
 
 
 ;a1 delay ga1 .25
-aL, aR reverbsc a1, a1, .6, 5000
+;oscil3 1.5  , 220*(1+
+aL, aR reverbsc a1, a1, .3, 2000
 
-aL vdelay3 a1+aR*10 ,20, 100
-aR vdelay3 a1+aL*10, 20, 100
+;aL vdelay3 a1+aR*10 ,20, 100
+;aR vdelay3 a1+aL*10, 20, 100
 
 
 outs aL, aR
